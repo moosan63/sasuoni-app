@@ -11,7 +11,7 @@ end
 class SasuoniApp < Sinatra::Base
   get '/' do
     @images = YAML.load(File.open("sasuoni_images.yaml")).map do |image|
-      Image.new(image["body"], image["url"])
+      Image.new(image["word"], image["image"])
     end
     slim :index
   end
