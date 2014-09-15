@@ -1,0 +1,26 @@
+doctype html
+
+html
+  head
+    link rel="stylesheet" href="style.css" type="text/css"
+    script src="view.js"  
+    title sasuoni
+
+  body
+    h1 sasuoni
+    ul#images
+      - @images.each do |image|
+        li.image
+          ul
+            li.show_image
+              img src="#{image.url_medium}"
+            li.serif 
+              = image.body
+            li.url_small 
+              = image.url_small
+            li.url_medium
+              = image.url_medium
+            li.url_large
+              = image.url_large
+          
+    
